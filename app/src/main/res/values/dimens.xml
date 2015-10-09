@@ -10,6 +10,6 @@
 
     <!--สำหรับรูปภาพต่างๆ-->
     <dimen name="logo">120dp</dimen>
-    <dimen name="edit_text">220dp</dimen>
+    <dimen name="edit_text">230dp</dimen>
 
 </resources>
