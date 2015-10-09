@@ -1,0 +1,22 @@
+<resources>
+    <string name="app_name">Health Record</string>
+
+    <string name="title">Health Record</string>
+    <string name="User">User :</string>
+    <string name="Pass">Password :</string>
+    <string name="Sign_up">Sign up</string>
+    <string name="Sign_in">Sign in</string>
+
+    <string name="title_signup">สมัคสมาชิก</string>
+    <string name="name">ชื่อ นามสกุล</string>
+    <string name="email">eMail</string>
+    <string name="sex">เพศ</string>
+    <string name="male">ชาย</string>
+    <string name="female">หญิง</string>
+    <string name="age">ช่วงอายุ</string>
+    <string name="weight">น้ำหนัก (กิโลกรัม)</string>
+    <string name="height">ส่วนสูง (เซนติเมตร)</string>
+    <string name="save">บันทึกข้อมูล</string>
+
+
+</resources>
