@@ -62,7 +62,7 @@ public class SignUpActivity extends AppCompatActivity {
         } else {
 
             //No Space
-            
+
 
 
         }

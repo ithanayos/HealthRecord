@@ -22,6 +22,7 @@ public class UserTABLE {
     public static final String COLUMN_SEX = "Sex";
     public static final String COLUMN_WEIGHT = "Weight";
     public static final String COUMN_HEIGHT = "Height";
+    public static final String COUMN_EMAIL = "Email";
 
     public UserTABLE(Context context) {
 
@@ -33,7 +34,7 @@ public class UserTABLE {
 
     //Add New Value to userTABLE
     public long addNewUser(String strUser, String strPassword, String strName, String strAge,
-                           String strSex, String strWeight, String strHeight) {
+                           String strSex, String strWeight, String strHeight, String strEmail) {
 
 
         ContentValues objContentValues = new ContentValues(); //คนถือString พาหะทำหน้าที่ผนึกดาต้า
@@ -44,6 +45,7 @@ public class UserTABLE {
         objContentValues.put(COLUMN_SEX, strSex);
         objContentValues.put(COLUMN_WEIGHT, strWeight);
         objContentValues.put(COUMN_HEIGHT, strHeight);
+        objContentValues.put(COUMN_EMAIL, strEmail);
 
         return writeSqLiteDatabase.insert(USER_TABLE, null, objContentValues); // add valuesใหม่ๆ
     }
