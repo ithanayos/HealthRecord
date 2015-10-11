@@ -1,5 +1,7 @@
 package utcc.som.cken.tae.healthrecord;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
@@ -193,12 +195,49 @@ public class MainActivity extends AppCompatActivity {
         } else {
 
             //No Space
+            checkUserPassword(strUser, strPassword);
 
         }
 
 
 
     } // clickSignIn
+
+    private void checkUserPassword(String strUser, String strPassword) {
+        try {
+            String[] strMyResult = objUserTABLE.searchUserPassword(strUser);
+            if (strPassword.equals(strMyResult[2])) {
+                //Password True
+                wecomeDialog(strMyResult[3]);
+            } else {
+                //Password False
+                MyDialog objMyDialog = new MyDialog();
+                objMyDialog.errorDialog(MainActivity.this,"Password False", "Please Try Again Password False");
+
+            }
+
+        } catch (Exception e) {
+            MyDialog objMyDialog = new MyDialog();
+            objMyDialog.errorDialog(MainActivity.this, "User False", "ไม่มี" + strUser + "ใน ฐานข้อมูลของเรา");
+
+        }
+
+
+    } //checkUserPassword
+
+    private void wecomeDialog(String strName) {
+        AlertDialog.Builder objBuilder = new AlertDialog.Builder(this);
+        objBuilder.setIcon(R.drawable.icon_question);
+        objBuilder.setTitle("Welcome");
+        objBuilder.setMessage("ยินดีต้อนรับ " + strName + "\n" + "สู่ระบบของเรา");
+        objBuilder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+                dialogInterface.dismiss();
+            }
+        });
+        objBuilder.show();
+    } //welcomeDialog
 
 
     public void clickSignUp(View view) {
