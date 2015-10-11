@@ -11,5 +11,6 @@
     <!--สำหรับรูปภาพต่างๆ-->
     <dimen name="logo">120dp</dimen>
     <dimen name="edit_text">230dp</dimen>
+    <dimen name="fab_margin">16dp</dimen>
 
 </resources>

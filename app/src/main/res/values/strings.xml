@@ -24,5 +24,7 @@
     <string name="exercise">ออกกำลังกาย</string>
     <string name="drink">การดื่มน้ำ</string>
     <string name="monitor">การอยู่หน้าจอ</string>
+    <string name="title_activity_home">HomeActivity</string>
+    <string name="title_activity_health">HealthActivity</string>
 
 </resources>
