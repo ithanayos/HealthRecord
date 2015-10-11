@@ -225,7 +225,7 @@ public class MainActivity extends AppCompatActivity {
 
     } //checkUserPassword
 
-    private void wecomeDialog(String strName) {
+    private void wecomeDialog(final String strName) {
         AlertDialog.Builder objBuilder = new AlertDialog.Builder(this);
         objBuilder.setIcon(R.drawable.icon_question);
         objBuilder.setTitle("Welcome");
@@ -233,7 +233,13 @@ public class MainActivity extends AppCompatActivity {
         objBuilder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {
+
+                Intent objIntent = new Intent(MainActivity.this, HomeHealthActivity.class);
+                objIntent.putExtra("Name", strName);    //Name เป็น Key ที้่ใช้ในการโยน  Data ไปอีกหน้า
+                startActivity(objIntent);
+
                 dialogInterface.dismiss();
+                finish();   // เมื่อกด Undo ที่โทรศัพท์ ให้ออกจาก App เลย ต้อง Login ใหม่
             }
         });
         objBuilder.show();
