@@ -234,7 +234,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {
 
-                Intent objIntent = new Intent(MainActivity.this, HomeHealthActivity.class);
+                Intent objIntent = new Intent(MainActivity.this, HomeActivity.class);
                 objIntent.putExtra("Name", strName);    //Name เป็น Key ที้่ใช้ในการโยน  Data ไปอีกหน้า
                 startActivity(objIntent);
 

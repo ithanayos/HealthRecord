@@ -3,11 +3,11 @@ package utcc.som.cken.tae.healthrecord;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
-public class HomeHealthActivity extends AppCompatActivity {
+public class TestActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_home_health);
+        setContentView(R.layout.activity_test);
     }
 }
