@@ -28,7 +28,13 @@ public class SignUpActivity extends AppCompatActivity {
 
         bindWidget();
 
+        //createSpinner();
+
     } // OnCreate
+
+    private void createSpinner() {
+
+    } // createSpinner
 
     private void bindWidget() {
 
@@ -36,6 +42,7 @@ public class SignUpActivity extends AppCompatActivity {
         passwordEditText = (EditText)findViewById(R.id.edtPassSign);
         nameEditText = (EditText) findViewById(R.id.edtNameSign);
         emailEditText = (EditText) findViewById(R.id.edtEmailSign);
+        //ageSpinner = (Spinner) findViewById(R.id.spnAge);
         weightEditText = (EditText) findViewById(R.id.edtWeight);
         heightEditText = (EditText) findViewById(R.id.edtHeight);
 
@@ -45,7 +52,7 @@ public class SignUpActivity extends AppCompatActivity {
     public void clickSave(View view){
 
         //Get Value From Edit text
-        userString = userEditText.getText().toString().trim();
+        userString = userEditText.getText().toString().trim(); //trim ตัดช่องว่างข้างหน้าหลังอัตโนมัติ
         passwordString = passwordEditText.getText().toString().trim();
         nameString = nameEditText.getText().toString().trim();
         emailString = emailEditText.getText().toString().trim();
@@ -62,9 +69,6 @@ public class SignUpActivity extends AppCompatActivity {
         } else {
 
             //No Space
-
-
-
         }
 
 

@@ -22,8 +22,8 @@ public class UserTABLE {
     public static final String COLUMN_AGE = "Age";
     public static final String COLUMN_SEX = "Sex";
     public static final String COLUMN_WEIGHT = "Weight";
-    public static final String COUMN_HEIGHT = "Height";
-    public static final String COUMN_EMAIL = "Email";
+    public static final String COLUMN_HEIGHT = "Height";
+    public static final String COLUMN_EMAIL = "Email";
 
     public UserTABLE(Context context) {
 
@@ -38,12 +38,12 @@ public class UserTABLE {
         try {
             String[] strResult = null;
             Cursor objCursor = readSqLiteDatabase.query(USER_TABLE,
-                    new String[] {COLUMN_ID_USER, COLUMN_USER, COLUMN_PASSWORD, COLUMN_NAME, COLUMN_AGE, COLUMN_SEX, COLUMN_WEIGHT, COUMN_HEIGHT, COUMN_EMAIL},
+                    new String[] {COLUMN_ID_USER, COLUMN_USER, COLUMN_PASSWORD, COLUMN_NAME, COLUMN_AGE, COLUMN_SEX, COLUMN_WEIGHT, COLUMN_HEIGHT, COLUMN_EMAIL},
                     COLUMN_USER + "=?",
-                    new String[] {String.valueOf(strUser)},
+                    new String[] {String.valueOf(strUser)},//แปลงค่าเป็น String
                     null, null, null, null);
             if (objCursor != null) {
-                if (objCursor.moveToFirst()) {
+                if (objCursor.moveToFirst()) { //เลื่อนตำแหน่ง Cursor ไปแถวแรกสุด เพราะCursor เป็น -1
                     strResult = new String[4];
                     strResult[0] = objCursor.getString(0);
                     strResult[1] = objCursor.getString(1);
@@ -72,8 +72,8 @@ public class UserTABLE {
         objContentValues.put(COLUMN_AGE, strAge);
         objContentValues.put(COLUMN_SEX, strSex);
         objContentValues.put(COLUMN_WEIGHT, strWeight);
-        objContentValues.put(COUMN_HEIGHT, strHeight);
-        objContentValues.put(COUMN_EMAIL, strEmail);
+        objContentValues.put(COLUMN_HEIGHT, strHeight);
+        objContentValues.put(COLUMN_EMAIL, strEmail);
 
         return writeSqLiteDatabase.insert(USER_TABLE, null, objContentValues); // add valuesใหม่ๆ
     }
